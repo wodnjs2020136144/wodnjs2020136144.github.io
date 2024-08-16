@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/*float 해제 박스*/
+.box::after {
+  float: none;
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*왼쪽 사이드바 css*/
+.ani-sidebar {
+  background-color: dodgerblue;
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  z-index: 5;
+  text-align: right;
+  padding: 20px;
+  transition: 0.5s;
+  transform: translateX(-140px);
+}
+
+.ani-sidebar:hover {
+  transform: translateX(0);
+  text-align: center;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-200px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.ani-sidebar h4 {
+  text-align: left;
+  color: white;
+}
+
+.ani-sidebar:hover h4 {
+  text-align: left;
+  margin-left: 50px;
+  animation-name: slide;
+  animation-duration: 1s;
+}
+
+@keyframes slide-icon {
+  0% {
+    transform: translateX(200px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.ani-sidebar:hover .sidebar-icon {
+  float: left;
+  animation-name: slide-icon;
+  animation-duration: 1s;
+}
+
+.sidebar-icon {
+  float: right;
+  width: 25px;
+  height: 25px;
+  color: white;
+}
+
+/*전체 감싸는 레이아웃*/
+.content {
+  margin-left: 60px;
+}
+
+/*헤더 navbar css*/
+.nav-link {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+
+.card {
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 25px;
+  height: 25px;
+  color: white;
+}
+
+.card-body {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+@keyframes movement {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg); /* 애니메이션이 50%만큼 동작시 */
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0); /* 애니메이션이 100%만큼 동작시 */
+  }
+}
+.card:hover {
+  animation-name: movement;
+  animation-duration: 1s;
+}
+
+.input-animation {
+  width: 150px;
+  transition: width 1s;
+}
+
+.input-animation:focus {
+  width: 500px;
+}/*# sourceMappingURL=main.css.map */
